@@ -14,24 +14,24 @@ const initialState: UserState = {
   error: '',
 }
 
-export const UserSlice = createSlice({
+export const UserSliceThunk = createSlice({
   name: 'user',
   initialState,
-  reducers: {
-    usersFetching(state) {
+  reducers: {},
+  extraReducers: {
+    [fetchUsersThunk.pending.type]: (state) => {
       state.isLoading = true
     },
-    usersFetchingSuccess(state, action: PayloadAction<IUser[]>) {
+    [fetchUsersThunk.fulfilled.type]: (state, action: PayloadAction<IUser[]>) => {
       state.isLoading = false
       state.users = action.payload
       state.error = ''
     },
-    usersFetchingError(state, action: PayloadAction<string>) {
+    [fetchUsersThunk.rejected.type]: (state, action: PayloadAction<string>) => {
       state.isLoading = false
       state.error = action.payload
     },
   },
-  extraReducers: {},
 })
 
-export default UserSlice.reducer
+export default UserSliceThunk.reducer
