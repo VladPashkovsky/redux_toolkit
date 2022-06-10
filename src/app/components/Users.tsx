@@ -4,7 +4,9 @@ import { fetchUsers } from '../dispatch/UserActionCreator'
 
 const Users = () => {
   const dispatch = useAppDispatch()
-  const { users, isLoading, error } = useAppSelector(state => state.UserReducer)
+  const { users, isLoading, error } = useAppSelector(
+    (state) => state.UserReducer
+  )
 
   useEffect(() => {
     dispatch(fetchUsers())

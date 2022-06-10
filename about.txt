@@ -1,0 +1,53 @@
+1. Настраиваем store:
+    - rootReducer = combineReducers
+    - setupStore = () => {
+      return configureStore({})
+    - типы, с помощью которых мы будем с хранилищем взаимодействовоать AppStore, RootState, AppDispatch
+
+2. hooks: делаем типизированные, чтобы подхватывались поля state и т.д.
+    export const useAppDispatch = () => useDispatch<AppDispatch>();
+    export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
+
+3. Создаем reducers. Reducers - это slice (функия createSlice) со своими полями, которая в конце возвращает
+export default slicename.reducer
+    - делаем UserSlice = createSlice({name: , initialState, reducers: , extrareducers: )
+        поля reducers и extrareducers по принципу switch/case
+    - прописываем userState и initialState
+    - прописываем UserReducer в store
+
+4. UserSlice сделаем только с полем reducers.
+    - прописываем все возможные reducers
+    - прописываем данный UserReducer в store
+
+5. Создаем Dispatch/UserActionCreator
+    - создаем диспатч через обращение к UerSlice.action
+
+6. Создаем компонент Users
+    - импортируем хуки
+    - прописываем dispatch
+    - достаем state из UserReducer
+    - С помощью useEffect достаем dispatch(fetchUsers)
+    - импортируем компонент в App
+
+==============================================================================
+
+7. Второй вариант - тоже самое, через AcyncThunk
+    - создаем в dispatch/UserActionCreatorThunk
+    - оздадим UserSliceThunk
+    - сооответствующий компонент UsersThunk
+    - в App
+
+=============================================================================
+
+ RTK Query
+
+8. Создадим services/PostService.ts
+    - создаем reducer через createAPI
+    - регистрируем данный reducer в store
+    - также в сам setupStore необходимо добаить middleware
+
+9. Создадим компонент PostContainer и там будем выводить логику постов
+    - при обращении к postAPI в компоненте, выодятся хуки в заисмости от полей, которые указаны в endpoints
+
+10. Для build.mutation поднимаем серверок из https://github.com/typicode/json-server
+

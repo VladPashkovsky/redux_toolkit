@@ -1,10 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { IUser } from '../../models/IUser'
-import { fetchUsersThunk } from '../dispatch/UserActionCreatorThunk'
 
 interface UserState {
-  users: IUser[],
-  isLoading: boolean,
+  users: IUser[]
+  isLoading: boolean
   error: string
 }
 

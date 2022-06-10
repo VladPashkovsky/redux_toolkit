@@ -3,9 +3,10 @@ import { useAppDispatch, useAppSelector } from '../hooks'
 import { fetchUsersThunk } from '../dispatch/UserActionCreatorThunk'
 
 const UsersThunk = () => {
-
   const dispatch = useAppDispatch()
-  const { users, isLoading, error } = useAppSelector(state => state.UserThunkReducer)
+  const { users, isLoading, error } = useAppSelector(
+    (state) => state.UserThunkReducer
+  )
 
   useEffect(() => {
     dispatch(fetchUsersThunk())

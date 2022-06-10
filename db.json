@@ -1,0 +1,59 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Super-server",
+      "body": "typicode"
+    },
+    {
+      "id": 2,
+      "title": "json-server",
+      "body": "typicode"
+    },
+    {
+      "id": 4,
+      "title": "json-server",
+      "body": "typicode"
+    },
+    {
+      "id": 5,
+      "title": "json-server",
+      "body": "typicode"
+    },
+    {
+      "id": 7,
+      "title": "yoyoyoyoyoyoy",
+      "body": "typicode"
+    },
+    {
+      "id": 8,
+      "title": "json-server",
+      "body": "typicode"
+    },
+    {
+      "title": "Privet, Yopta!",
+      "body": "Privet, Yopta!",
+      "id": 9
+    },
+    {
+      "title": "How are you doing?",
+      "body": "How are you doing?",
+      "id": 10
+    },
+    {
+      "title": "Hahahah",
+      "body": "Hahahah",
+      "id": 11
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

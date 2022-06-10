@@ -11,7 +11,5 @@ const store = setupStore()
 root.render(
   <Provider store={store}>
     <App />
-  </Provider>,
+  </Provider>
 )
-
-
